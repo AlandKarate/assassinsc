@@ -5,12 +5,10 @@ import time
 import random
 from random import randint
 import aiohttp
-import requests
 import json
 import sys
 import traceback
 import os
-from selenium import webdriver
 
 bot = commands.Bot(command_prefix='a!')
 bot.load_extension("jishaku")
