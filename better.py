@@ -11,8 +11,6 @@ import traceback
 import os
 
 bot = commands.Bot(command_prefix='a!')
-bot.load_extension("jishaku")
-
 
 @bot.event
 async def on_ready():
