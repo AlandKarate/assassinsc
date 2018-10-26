@@ -116,18 +116,7 @@ async def ban(ctx, user: discord.Member):
         await ctx.send(embed=embed)
 
 
-@bot.command(pass_context=True)
-@commands.is_owner()
-async def logout(ctx):
-    embed = discord.Embed
-    """
 
-    Logout (Only For Owner Of The Bot) object
-    """
-    embed = discord.Embed(color=0x8B0000)
-    embed = discord.Embed(title="LOGOUT", description="Successus!", color=0x8B0000)
-    await ctx.send(embed=embed)
-    await bot.close()
 
 
 @bot.command(pass_context=True)
@@ -203,7 +192,6 @@ async def gay(ctx, member: discord.Member = None):
         await ctx.send(embed=embed)
 
 @bot.command(pass_context=True)
-@commands.is_owner()
 async def chatlogs(ctx):
     """
 
@@ -229,30 +217,10 @@ async def dog(ctx):
     embed.timestamp = datetime.datetime.utcnow()
     await ctx.send(embed=embed)
 
-@bot.command(name = "eval")
-@commands.is_owner()
-async def _eval(ctx, *, error ,code: str):
-    eval(code)
 
 
 
-@commands.is_owner()
-@bot.command(pass_context=True)
-async def screenshot(ctx, website: str):
-    upr = await ctx.send("Please wait...")
-    start = time.time()
-    driver = webdriver.Firefox(executable_path=r'C:\geckodriver.exe')
-    try:
-        driver.get('https://'+website)
-    except:
-        embed = discord.Embed(title='Error. Please try again later.', color=0x8B0000)
-        await ctx.send(embed=embed)
-        return
-    driver.save_screenshot('screen.png')
-    took = time.time() - start
-    driver.quit()
-    await ctx.send(content='Took %s Sec'%took, file=discord.File('watch.png'))
-    os.remove('screen.png')
+
 
 
 @bot.command(pass_context=True)
